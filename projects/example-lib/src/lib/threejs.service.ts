@@ -22,8 +22,16 @@ export type ThreejsSimpleCube = {
   cube: THREE.Mesh
 }
 
+export type ThreejsSimpleSphere = {
+  sphere: THREE.Mesh
+}
+
+export type * as THREE from 'three';
+
 @Injectable()
 export class ThreejsService {
+
+  private _frankMaterial = new THREE.MeshBasicMaterial({ color: 0xfdc300 });
 
   intializeSimpleScene({ fov, width, height }: ThreejsServiceConfig): ThreejsSimpleScene {
     const scene = new THREE.Scene();
@@ -37,12 +45,20 @@ export class ThreejsService {
 
   renderSimpleCube({ scene, camera }: ThreejsSimpleCubeProps): ThreejsSimpleCube {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: 0xfdc300 });
-    const cube = new THREE.Mesh(geometry, material);
+    const cube = new THREE.Mesh(geometry, this._frankMaterial);
     scene.add(cube);
 
     camera.position.z = 3;
     return { cube };
+  }
+
+  renderSimpleSphere({ scene, camera }: ThreejsSimpleCubeProps): ThreejsSimpleSphere {
+    const geometry = new THREE.SphereGeometry(1);
+    const sphere = new THREE.Mesh(geometry, this._frankMaterial);
+    scene.add(sphere);
+
+    camera.position.z = 3;
+    return { sphere };
   }
 
 
