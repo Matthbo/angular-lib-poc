@@ -96,6 +96,20 @@
           }
         }
       }
+    },
+    "example-lib": {
+      "projectType": "library",
+      "root": "projects/example-lib",
+      "sourceRoot": "projects/example-lib/src",
+      "prefix": "example",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/example-lib/ng-package.json"
+          }
+        }
+      }
     }
   }
 }

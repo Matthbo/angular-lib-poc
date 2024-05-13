@@ -1,0 +1,12 @@
+{
+  "name": "example-lib",
+  "version": "1.0.0",
+  "description": "An example library",
+  "main": "index.js",
+  "author": "Matthbo",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/core": "^17.0.0",
+    "three": "^0.164.1"
+  }
+}

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ExampleModule } from './example/example.module';
+import { ExampleModule } from '../../projects/example-lib/src/lib/example.module';
+import { ThreejsService } from '../../projects/example-lib/src/lib/threejs.service';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,6 @@ import { ExampleModule } from './example/example.module';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+
+  constructor(private threeService: ThreejsService) { }
 }
