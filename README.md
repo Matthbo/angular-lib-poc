@@ -23,4 +23,4 @@ Pay attention to `/package.json`, `/angular.json` & `projects/example-lib/packag
 The biggest upside of splitting the library code and testing the implementation through the main project is that you can test exactly as how it'll be used in other projects.
 
 If you see any improvements or additions that could benefit this POC, please open an issue.
-My goal with this POC is to setup a tempate that can be used in the future for all angular libraries.
+My goal with this POC is to setup a template that can be used in the future for all angular libraries.
